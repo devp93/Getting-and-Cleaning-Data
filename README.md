@@ -33,7 +33,7 @@ This script takes the raw data and turns it into the tidy data by following thes
 1) The run_analysis.R script uses the dplyr package. If this is not already installed it can be downloaded from CRAN using the following script: *install.packages("dplyr")*
 
 2) The raw data is downloaded from: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-The unzipped "UCI HAR Dataset" folder from the download link should be saved in "./data/"
+The unzipped "UCI HAR Dataset" folder from the download link should be saved in the working directory.
 
 3) The tidy_data.txt can be read into R using the following command: *read.table("./filepath/tidy_data.txt")*, replacing "filepath" with the directory of the file. 
 

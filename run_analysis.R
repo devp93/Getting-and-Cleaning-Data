@@ -79,5 +79,5 @@ ave_var <- mean_std_data %>% group_by(Subject, Activity) %>%
 
 
 ## export tidy data
-write.table(ave_var, "./Course Project/tidy_data.txt")
+write.table(ave_var, "./Course Project/Getting-and-Cleaning-Data/tidy_data.txt", row.names = FALSE)
 

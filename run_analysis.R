@@ -2,24 +2,22 @@
 rm(list = ls()) ## clear environment
 
 ## set up working directories
-wd <- "C:/Users/Dev/Google Drive/R/Coursera/3 - Data/Week 4" ## please set your working directory
+wd <- "C:/Users/Dev/Google Drive/R/Coursera/3 - Data/Week 4/data" ## please set your working directory
 setwd(wd)
 
-if(!file.exists("./data")) {dir.create("./data")}
-## the unzipped "UCI HAR Dataset" folder from the following link should be saved in :
-## "./data/
+## the unzipped "UCI HAR Dataset" folder from the following link should be saved in the working directory
 ## link: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 ## import data into RStudio
-features <-  read.table("./data/UCI HAR Dataset/features.txt")
-activity_labels <- read.table("./data/UCI HAR Dataset/activity_labels.txt")
+features <-  read.table("./UCI HAR Dataset/features.txt")
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
-trainpath <- "./data/UCI HAR Dataset/train"
+trainpath <- "./UCI HAR Dataset/train"
 trainx <- read.table(paste(trainpath, "/X_train.txt", sep = ""))
 trainy <- read.table(paste(trainpath, "/Y_train.txt", sep = ""))
 trainsub <- read.table(paste(trainpath, "/subject_train.txt", sep = ""))
 
-testpath <- "./data/UCI HAR Dataset/test"
+testpath <- "./UCI HAR Dataset/test"
 testx <- read.table(paste(testpath, "/X_test.txt", sep = ""))
 testy <- read.table(paste(testpath, "/Y_test.txt", sep = ""))
 testsub <- read.table(paste(testpath, "/subject_test.txt", sep = ""))
@@ -79,5 +77,5 @@ ave_var <- mean_std_data %>% group_by(Subject, Activity) %>%
 
 
 ## export tidy data
-write.table(ave_var, "./Course Project/Getting-and-Cleaning-Data/tidy_data.txt", row.names = FALSE)
+write.table(ave_var, "C:/Users/Dev/Google Drive/R/Coursera/3 - Data/Week 4/Course Project/Getting-and-Cleaning-Data/tidy_data.txt", row.names = FALSE)
 
